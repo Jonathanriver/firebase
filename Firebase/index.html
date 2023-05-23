@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+
+<script>
+    const firebaseConfig = {
+        // apiKey: "AIzaSyAYscBBR-FLTJxiS4eDKgzWbwbuYmOOeNs",
+        // authDomain: "no-sql-33b56.firebaseapp.com",
+        // projectId: "no-sql-33b56",
+        // storageBucket: "no-sql-33b56.appspot.com",
+        // messagingSenderId: "884130291682",
+        // appId: "1:884130291682:web:97af91d916c4ada97fa3bb",
+        // measurementId: "G-HL9TQ4KMXS"
+        databaseURL: "https://no-sql-33b56-default-rtdb.firebaseio.com",
+    };
+
+    firebase.initializeApp(firebaseConfig);
+
+    let article_id = 1;
+    let article = {
+        'title': 'Conectar Firebase con tu app de JavaScript',
+    }
+
+    firebase.database().ref('articles/' + article_id).set(article);
+
+    // firebase.database().ref('articles/' + article_id).once('value').then(
+    //     function (snapshot) {
+    //         var title = snapshot.val().title;
+    //         console.log(title);
+    //     }
+    // )
+</script>
+</html>
